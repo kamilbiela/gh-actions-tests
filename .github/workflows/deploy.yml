@@ -11,7 +11,7 @@ on:
       - dev-*
 
 env:
-  TEST1: kamilbiela
+  TEST1: kamilbiela,testaccount
 
 jobs:
   deploy:
@@ -31,7 +31,9 @@ jobs:
         with:
           script: |
             if (process.env.TEST1.split(',').includes(context.actor) === false) {
-              core.setFailed("Not authorized to deploy to production")
+              core.setFailed("Not authorized to deploy to production");
             }
+            
+            return false;
 
       - run: echo "ok"
