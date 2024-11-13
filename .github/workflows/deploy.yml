@@ -11,7 +11,7 @@ on:
       - dev-*
 
 env:
-  TEST1: kamilbiela,kamilbiela-com
+  TEST1: kamilbiela
 
 jobs:
   deploy:
